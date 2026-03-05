@@ -34,7 +34,7 @@ color_codes = {
     "blue2": "#30336b",
     "pink": "#f4c2c2",
     "darkblue": "#130f40",
-    "lime": "#C1FF9C",
+    "LightPink": "#FFB6C1",
 }
 
 
@@ -42,7 +42,7 @@ color_codes = {
 SUPPORTED_COLORS = ",".join(color_codes.keys())
 
 # Generate a random color
-COLOR = random.choice(["red", "green", "blue", "blue2", "darkblue", "pink", "lime"])
+COLOR = random.choice(["red", "green", "blue", "blue2", "darkblue", "pink", "LightPink"])
 
 
 @app.route("/", methods=['GET', 'POST'])
