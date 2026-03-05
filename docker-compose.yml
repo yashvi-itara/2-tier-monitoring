@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+
+  mysql:
+    image: mysql-db
+    container_name: mysql-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: passwors
+      MYSQL_DATABASE: employees
+    ports:
+      - "3306:3306"
+
+  flask-app:
+    image: flask-app
+    container_name: flask-app
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    environment:
+      DBHOST: mysql-db
+      DBPORT: 3306
+      DBUSER: root
+      DBPWD: passwors
+      DATABASE: employees
